@@ -1,9 +1,10 @@
-kind: pipeline
-name: default
-
-steps:
-- name: test
-  image: node
-  commands:
-  - npm install
-  - npm test
+version: 2
+jobs:
+  build:
+    working_directory: ~/tmp
+    docker:
+      - image: circleci/node:7
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm test 
