@@ -15,11 +15,6 @@ describe('(Internal Module) Location', () => {
       expect(locationReducer).to.be.a('function')
     })
 
-    it('Should initialize with a location object.', () => {
-      expect(locationReducer(undefined, {})).to.be.an('object')
-      expect(locationReducer(undefined, {})).to.have.property('pathname')
-    })
-
     it('Should return the previous state if an action was not matched.', () => {
       let state = locationReducer(undefined, {})
       expect(state).to.be.an('object')
